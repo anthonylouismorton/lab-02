@@ -99,5 +99,69 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 5.')
 }
+
+let attempts = 0;
+let correctAnswer = false;
+let secretNumber = 55;
+while(attempts < 4 && correctAnswer === false)
+{
+  let numberGuess = prompt('Guess a number between 1-100? (you have 4 guesses)');
+  let number = parseInt(numberGuess)
+  attempts++
+  if(number !== secretNumber && attempts == 4)
+  {
+    alert('Sorry you ran out of attempts. Thanks for playing!')
+    console.log(userName + 'did not guess the correct number.')
+  }
+  else if(number < secretNumber && attempts < 4)
+  {
+    alert('Incorrect. The number is higher than ' +numberGuess+ '. Please guess again')
+    
+  }
+  else if(number > secretNumber && attempts < 4)
+  {
+    alert('Incorrect. The number is lower than ' +numberGuess+ '. Please guess again')
+  }
+  else if(number === secretNumber)
+  {
+    alert('Congratulations! You guess the correct number (55)')
+    console.log(userName + ' guessed the correct number.')
+    correctAnswer = true;
+    correct++
+  }
+}
+
+let attemptNumber = 0;
+let correctCountry = false;
+let visitedCountries = ['iraq', 'mexico', 'afghanistan', 'bahrain', 'philippines', 'kuwait'];
+while(attemptNumber < 6 && correctCountry === false)
+{
+  let guessOriginal = prompt('Can you guess what country outside of the US I have been to?');
+  let guess = guessOriginal.toLowerCase();
+  for(let i = 0; i < visitedCountries.length; i++)
+  {
+    let currentCountry = visitedCountries[i];
+    if(guess === currentCountry)
+    {
+      alert('Congratulations! You guessed right');
+      correctCountry = true;
+      console.log(userName + ' guessed a country I have visited.')
+      correct++
+    }
+    
+  }
+  attemptNumber++;
+  if(correctCountry === false && attemptNumber < 6)
+  {
+    alert('I have not visited ' +guess+ ' please try again.')
+     
+  }
+  else
+  {
+    alert('I have not visited ' +guess+ '. You are out of guesses. Thanks for playing!')
+    console.log(userName + ' did not guess a country I have visited.')
+  }
+}
+
 alert(userName + ', thank you for playing my guessing game! You got ' +correct+ ' answers right. Have a good day!')
 console.log(userName + ' got ' +correct+ ' answers right.')
