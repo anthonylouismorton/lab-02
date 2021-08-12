@@ -2,6 +2,8 @@
 let userName = prompt('What is your name?');
 console.log(userName +' is the current user');
 alert('Hello, ' +userName+ "! My name is Anthony. Welcome to my guessing game!")
+
+function question1() {
 let animalOriginal = prompt('Is my favorite animal dogs?');
 let animal = animalOriginal.toLowerCase();
 let correct = 0;
@@ -22,7 +24,9 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 1.')
 }
+}
 
+function question2(){
 let stateOriginal = prompt('Do I currently live in Arizona?');
 let state = stateOriginal.toLowerCase();
 
@@ -42,7 +46,9 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 2.')
 }
+}
 
+function question3(){
 let hockeyOriginal = prompt('Is Hockey my favorite sport?');
 let hockey = hockeyOriginal.toLowerCase();
 if(hockey === 'yes' || hockey === 'y')
@@ -61,7 +67,9 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 3.')
 }
+}
 
+function question4(){
 let teamOriginal = prompt('Are the Golden Knights my favorite hockey team?');
 let team = teamOriginal.toLowerCase();
 if(team === 'yes' || team === 'y')
@@ -80,7 +88,9 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 4.')
 }
+}
 
+function question5(){
 let foodOriginal = prompt('Are mashed potatoes my favorite food?');
 let food = foodOriginal.toLowerCase();
 if(food === 'yes' || food === 'y')
@@ -99,7 +109,9 @@ else
   alert('Invalid selection. You must enter a valid command.')
   console.log('User did not enter a valid command for question 5.')
 }
+}
 
+function question6(){
 let attempts = 0;
 let correctAnswer = false;
 let secretNumber = 55;
@@ -130,7 +142,9 @@ while(attempts < 4 && correctAnswer === false)
     correct++
   }
 }
+}
 
+function question7(){
 let attemptNumber = 0;
 let correctCountry = false;
 let visitedCountries = ['iraq', 'mexico', 'afghanistan', 'bahrain', 'philippines', 'kuwait'];
@@ -162,6 +176,15 @@ while(attemptNumber < 6 && correctCountry === false)
     console.log(userName + ' did not guess a country I have visited.')
   }
 }
+}
+
+question1();
+question2();
+question3();
+question4();
+question5();
+question6();
+question7();
 
 alert(userName + ', thank you for playing my guessing game! You got ' +correct+ ' answers right. Have a good day!')
 console.log(userName + ' got ' +correct+ ' answers right.')
