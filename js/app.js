@@ -6,7 +6,7 @@ let correct = 0;
 function invalidCommand(question)
 {
   alert('Invalid entry. You must use y, yes, n, or no.')
-  console.log(userName +' did not enter a valid input for question' +question)
+  console.log(userName +' did not enter a valid input for question ' +question)
 }
 function correctAnswer(message,question)
 {
@@ -62,17 +62,32 @@ function question(question)
       incorrectAnswer('Incorrect. Hockey is my favorite sport and no sport is better.',3)
       break;
       case 'Are the Golden Knights my favorite hockey team?':
-      incorrectAnswer('Correct! The coyotes are my favorite team.',5)
+      correctAnswer('Correct! The coyotes are my favorite team.',4)
       break;
       case 'Are mashed potatoes my favorite food?':
       incorrectAnswer('Incorrect! Mashed potatoes are definitely my favorite.',5)
       break;
     }
   }
-  else
-  {
-  invalidCommand(1)
-  }
+  else if(answer !== 'no' || answer !== 'n' || answer !== 'yes' || answer !== 'y')
+  switch(question)
+    {
+      case 'Is my favorite animal dogs?':
+      invalidCommand(1)
+      break;
+      case 'Do I currently live in Arizona?':
+      invalidCommand(2)
+      break;
+      case 'Is Hockey my favorite sport?':
+      invalidCommand(3)
+      break;
+      case 'Are the Golden Knights my favorite hockey team?':
+      invalidCommand(4)
+      break;
+      case 'Are mashed potatoes my favorite food?':
+      invalidCommand(5)
+      break;
+    }
 }
 function question1() {
   question('Is my favorite animal dogs?')
